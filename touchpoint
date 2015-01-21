@@ -120,9 +120,9 @@ local Button = {
 		self.buttonList[name].active = not self.buttonList[name].active
 		if not noDraw then self:draw() end
 	end,
-	flash = function(self, name)
+	flash = function(self, name, duration)
 		self:toggleButton(name)
-		sleep(0.15)
+		sleep(tonumber(duration) or 0.15)
 		self:toggleButton(name)
 	end,
 	rename = function(self, name, newName)
